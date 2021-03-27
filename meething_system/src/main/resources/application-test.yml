@@ -19,7 +19,7 @@ spring:
   #jdbc配置   （ localhost : 3306 ）
   datasource:
     url: jdbc:mysql://1.15.141.65:3306/group1?useUnicode=true&characterEncoding=UTF-8&useSSL=true&serverTimezone=Etc/GMT-8
-      username: root
+      username: group
       password: Root123.
       driver-class-name: com.mysql.cj.jdbc.Driver
   #静态文件配置
