@@ -18,14 +18,14 @@ server:
 spring:
   #jdbc配置   （ localhost : 3306 ）
   datasource:
-    url: jdbc:mysql://1.15.141.65:3306/group1?useUnicode=true&characterEncoding=UTF-8&useSSL=true&serverTimezone=Etc/GMT-8
-      username: root
-      password: Root123.
-      driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://1.15.141.65:3306/group1
+    username: group
+    password: Root123@
+    driver-class-name: com.mysql.cj.jdbc.Driver
   #静态文件配置
-  web:
-    resources:
-      static-locations: classpath:/static,classpath:/META-INF/resources,classpath:/templates/
+#  web:
+#    resources:
+#      static-locations: classpath:/static,classpath:/META-INF/resources,classpath:/templates/
 
 #mybatis配置
 mybatis:
@@ -34,10 +34,10 @@ mybatis:
   #模型所在的包名
   type-aliases-package: fzu.concerto.meething_system.pojo
   #属性映射  userName <==> user_name
-  configuration:
-    mapUnderscoreToCamelCase: true
+#  configuration:
+#    mapUnderscoreToCamelCase: true
 
 #showSql
-logging:
-  level:
-    com.practice.pairproject: debug
+#logging:
+#  level:
+#    com.practice.pairproject: debug
