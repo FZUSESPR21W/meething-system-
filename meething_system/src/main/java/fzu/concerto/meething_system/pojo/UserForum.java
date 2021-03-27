@@ -1,7 +1,12 @@
 package fzu.concerto.meething_system.pojo;
 
+import lombok.Builder;
+import lombok.extern.slf4j.Slf4j;
+
 import java.io.Serializable;
 
+@Slf4j
+@Builder
 public class UserForum implements Serializable {
     private Integer ufid;
 
