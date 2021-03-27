@@ -77,7 +77,9 @@
             也可以在tableName属性中通过使用%通配符来匹配所有数据库表,
             只有匹配的表才会自动生成文件 enableSelectByPrimaryKey相应的配置表示是否生成相应的接口
         -->
-        <table tableName="forum" enableCountByExample="true" enableUpdateByExample="true"
+
+
+        <!--<table tableName="forum" enableCountByExample="true" enableUpdateByExample="true"
                enableDeleteByExample="true" enableSelectByExample="true" selectByExampleQueryId="true"
                enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true"
                enableDeleteByPrimaryKey="true">
@@ -107,7 +109,7 @@
                enableDeleteByPrimaryKey="true">
             <property name="useActualColumnNames" value="false"/>
             <generatedKey column="ufid" sqlStatement="Mysql" identity="true" />
-        </table>
+        </table>-->
 
 
     </context>

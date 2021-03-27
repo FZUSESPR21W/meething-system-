@@ -40,4 +40,4 @@ mybatis:
 #showSql
 logging:
   level:
-    com.practice.pairproject: debug
+    fzu.concerto.meething_system: debug
