@@ -144,6 +144,7 @@
                     <include>**/*.js</include>
                     <include>**/*.yml</include>
                     <include>**/*.properties</include>
+                    <include>**/*.yml</include>
                 </includes>
             </resource>
         </resources>

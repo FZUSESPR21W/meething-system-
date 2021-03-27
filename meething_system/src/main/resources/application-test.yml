@@ -38,6 +38,7 @@ mybatis:
 #    mapUnderscoreToCamelCase: true
 
 #showSql
-#logging:
-#  level:
-#    com.practice.pairproject: debug
+logging:
+  level:
+    fzu.concerto.meething_system: debug
+
