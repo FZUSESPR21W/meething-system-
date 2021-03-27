@@ -33,10 +33,10 @@ var vm=new Vue({
             if (!testpass) this.passtishi='密码不正确';
             if (this.usertishi || this.passtishi) return;
 
-             userInfo =JSON.stringify(testpass)//把内容转换成字符串形式
+            userInfo = JSON.stringify(testpass)//把内容转换成字符串形式
 
-        　   localStorage.setItem('userInfo', userInfo);
-             window.location.href='../登录/登录成功.html';
+        　  localStorage.setItem('userInfo', userInfo);
+            window.location.href='../登录/登录成功.html';
             
             }
     }

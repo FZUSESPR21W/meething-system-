@@ -9,13 +9,12 @@
     <link rel="stylesheet" href="../css/index.css">
 </head>
 <body>
-    <div class="container-fluid" id="app">
+    <div class="container-fluid" id="app" v-cloak>
         <div class="row">
             <nav class="navbar navbar-default" role="navigation">
                 <div class="container-fluid">
                     <div class="navbar-header">
-                        <a class="navbar-brand" href="">relateTitle</a>
-                        <!--用户界面/分论坛1/分论坛2/分论坛3/-->
+                        <a class="navbar-brand" href="">CONCERTO</a>
                     </div>
                     <div>
                         <ul class="nav navbar-nav">
@@ -27,13 +26,13 @@
                             <li id="welcome">
                                 <a href="javascript:void(0);">欢迎您，<span id="login-name">XXX</span>（<span id="identity">用户</span>）</a>
                             </li>
-                            <li id="login">
-                                <a href="/">&nbsp;管理</a>
+                            <li id="manage" @click="manage">
+                                <a href="/menage">&nbsp;管理</a>
                             </li>
-                            <li id="register">
+                            <li id="message" @click="message">
                                 <a href="/message">&nbsp;消息</a>
                             </li>
-                            <li id="exit">
+                            <li id="exit" @click="exit">
                                 <a href="/login">&nbsp;退出</a>
                             </li>
                             <li class="divider-vertical">
@@ -52,14 +51,16 @@
                     <h4>主席：{{ forum.leader }}</h4>
                 </div>
                 <div class="meeting">
-                    <ul v-for="(value,key,index) in forum.message">
-                        <li>{{ key }} - {{ value }}</li>
+                    <ul>
+                        <li v-for="(value,key,index) in forum.message">{{ key }} - {{ value }}</li>
                     </ul>
                 </div>
-            <div class="dash"></div>
+            </div>
         </div>
     </div>
     <script src="../js/vue.js"></script>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script src="../js/public.js"></script>
     <script src="../js/index.js"></script>
 </body>
 </html>
