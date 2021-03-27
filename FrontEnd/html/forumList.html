@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+    <meta charset="utf-8">
+    <title>userList</title>
+    <link rel="stylesheet" href="../css/UserList.css">
+    
+  </head>
+  <body>
+  <div class="fly-panel fly-column">
+    <div class="layui-container">
+      <ul class="layui-clear">
+        <li class="layui-hide-xs"><a href="/">首页</a></li>
+      <li class="layui-hide-xs layui-hide-sm layui-show-md-inline-block"><span class="fly-mid"></span></li> 
+        <li><a href="">公告<span class="layui-badge-dot"></span></a></li>  
+    </ul>
+      
+      <div class="fly-column-right layui-hide-xs"> 
+        <a href="../add.html" class="layui-btn">发表新帖</a> 
+      </div> 
+    </div>
+  </div>
+
+  <center>
+  <div class="layui-container">
+    <div class="layui-row layui-col-space15">
+      <div class="layui-col-md8">
+        <div class="fly-panel" style="margin-bottom: 0;">
+          
+          <div class="fly-panel-title fly-filter">
+            <span>共有人数：   </span>
+            <span>{{totalNumber}}</span>
+            <span>今日新增人数：   </span>
+            <span>{{newNumber}}</span>
+          </div>
+        
+          <ul class="fly-list">          
+            
+            <li v-for="user in users"><span>{{ user.name }}</span></li>
+            
+          </ul>
+        
+
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <center>
+
+  </body>
+</html>
