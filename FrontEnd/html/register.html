@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="rewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/register.css"/>
+    <script src="../js/vue.js"></script>
+    <title>register</title>
+</head>
+<body>
+    
+
+        <div id="app">
+            <h2 class="title">注册</h2>
+            <div class="inner">
+            <form action="/register" method="POST">
+                <input type="text" placeholder="请输入用户名"  v-model="userIn.user" ><br>
+                <span>{{ usertishi }}</span><br>
+                <input type="password" placeholder="请输入密码" v-model="userIn.pass" @keyup.enter="register()"><br>
+                <span >{{ passtishi }}</span><br>
+                <span>{{ tishi }}</span><br>
+                </div>
+                <a href="login.html">返回登录界面</a><br>
+                <button type="button" @click="register()" id="register">注册</button>
+                <h3 v-show="isShow">{{Info}}</h3>
+            </form>
+        </div>
+    <script src="../js/register.js"></script>
+
+   
+  
+</body>
+</html>
