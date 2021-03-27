@@ -16,15 +16,20 @@
                 <input type="password" placeholder="请输入密码" v-model="userIn.pass" @keyup.enter="register()"><br>
                 <span >{{ passtishi }}</span><br>
                 <span>{{ tishi }}</span><br>
+            </div>
+                <div>
+                    <input type="checkbox" class="forum"><label>一论坛</label>
+                    <input type="checkbox" class="forum"><label>二论坛</label>
+                    <input type="checkbox" class="forum"><label>三论坛</label>
                 </div>
-                <a href="login.html">返回登录界面</a><br>
+                    <br/>
+                    <br/>
+                <div><a href="login.html">返回登录界面</a></div><br/>
                 <button type="button" @click="register()" id="register">注册</button>
                 <h3 v-show="isShow">{{Info}}</h3>
             </form>
+            
         </div>
     <script src="../js/register.js"></script>
-
-   
-  
 </body>
 </html>
