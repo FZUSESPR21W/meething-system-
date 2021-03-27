@@ -12,6 +12,6 @@ public class Forum {
   private long fid;
   private String name;
   private String description;
-  private java.sql.Timestamp time;
+  private String  time;
 
 }

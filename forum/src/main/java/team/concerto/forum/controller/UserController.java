@@ -1,5 +1,7 @@
 package team.concerto.forum.controller;
 
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -58,9 +60,22 @@ public class UserController {
         return modelMap;
     }
 
-    @GetMapping("/test")
-    public Object test(){
+    @GetMapping("/allUsers")
+    public Object getAllUsers(){
         return userService.list();
+    }
+
+    @PostMapping("/joinForum")
+    public void joinForum(@RequestBody JSONObject jsonParam){
+        long uid = jsonParam.getLong("uid");
+        JSONArray ja = jsonParam.getJSONArray("fid");
+        for(int i =0;i<ja.size();i++){
+            Userforum uf = new Userforum();
+            uf.setUid(uid);
+            uf.setFid(ja.getLong(i));
+            userforumService.save(uf);
+        }
+
     }
 
 }
