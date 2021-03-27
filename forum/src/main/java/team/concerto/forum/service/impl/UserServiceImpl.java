@@ -11,16 +11,6 @@ import team.concerto.forum.service.UserService;
 public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements UserService {
 
     @Override
-    public long login(User user) {
-        User qUser = (User) this.getOne(Wrappers.<User>lambdaQuery().eq(User::getName, user.getName()));
-        if (qUser == null)
-            return -1;
-        else if (!user.getPassword().equals(qUser.getPassword()))
-            return -2;
-        return user.getUid();
-    }
-
-    @Override
     public int register(User user) {
         if(this.getOne((Wrappers.<User>lambdaQuery().eq(User::getName, user.getName())))!=null)
             return 1;
