@@ -14,6 +14,7 @@ import team.concerto.forum.service.ForumService;
 import team.concerto.forum.service.UserService;
 import team.concerto.forum.service.UserforumService;
 
+import java.text.SimpleDateFormat;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -48,8 +49,10 @@ public class UserController {
     @PostMapping("/register")
     public Map<String,Object> register(@RequestBody User user){
         Map<String,Object> modelMap = new HashMap<>();
+        SimpleDateFormat tempDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String datetime = tempDate.format(new java.util.Date());
+        user.setSignDate(datetime);
         int res = userService.register(user);
-
         modelMap.put("code",res);
         return  modelMap;
     }
