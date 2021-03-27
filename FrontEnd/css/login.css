@@ -1,0 +1,28 @@
+ 
+	*{margin: 0;padding: 0;}
+	a{text-decoration: none;font-size: 12px;color: white;float: right;margin:-20px 20px 0 0;}
+    body{font-family:  "宋体";background: url(images/2.jpg) no-repeat;background-size: 100%;}
+    /*#loginForm{
+        position: relative;
+        background-color: rgb(57, 128, 190);
+        width: 500px;
+        height: 600px;
+
+    }*/
+	#app{
+        position: absolute;
+        background-color: blue;
+        width: 300px;
+        height: 400px;
+        /*margin:100px auto;*/
+        left: 40%;
+        top: 20%;
+        text-align: center;
+        background: rgba(50,50,50,.6);
+        border-radius: 10px;
+    }
+	.title{line-height: 50px;color: white;border-bottom: 1px solid silver;}
+	.inner{margin-top: 80px;}
+	input{width: 170px;height: 34px;border-radius: 5px;color:black;}
+	span{font-size: 12px;color:silver;margin-left: -80px;}
+	button{width: 170px;height: 36px;border-radius: 5px;background:#5B8020;border: 1px solid  silver;color: white;font-size: 18px;margin-top: -10px;cursor: pointer;}
