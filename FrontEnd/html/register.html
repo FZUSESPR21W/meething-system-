@@ -10,7 +10,7 @@
         <div id="app">
             <h2 class="title">注册</h2>
             <div class="inner">
-            <form action="/register" method="POST">
+            <form action="http://1.15.141.65:8080/register" method="POST">
                 <input type="text" placeholder="请输入用户名"  v-model="userIn.user" ><br>
                 <span>{{ usertishi }}</span><br>
                 <input type="password" placeholder="请输入密码" v-model="userIn.pass" @keyup.enter="register()"><br>
@@ -24,7 +24,6 @@
                 </div>
                     <br/>
                     <br/>
-                <div><a href="login.html">返回登录界面</a></div><br/>
                 <button type="button" @click="register()" id="register">注册</button>
                 <h3 v-show="isShow">{{Info}}</h3>
             </form>

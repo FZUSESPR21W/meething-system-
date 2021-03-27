@@ -13,31 +13,34 @@ var vm=new Vue({
 
     },
     methods:{
-        login () {
-            this.usertishi = '';
-            this.passtishi =''
-            //用户名随意
-            var obj=JSON.parse(this.Info);
-            /*console.log(obj[0])//去数组里的第一组数据*/
-            if (!this.userIn.user) {this.usertishi='用户名不能为空';}
-            //判断注册的数组中是否能找到输入的用户名
-            var testList = obj.find( (item) => {return this.userIn.user === item.username});
-            if (!testList) this.usertishi='用户名不存在';
-            //密码
-            if (!this.userIn.pass) {
-                this.passtishi='密码不能为空';
-            }
-            //判断输入的密码是否为输入的用户名的密码
-            var testpass= obj.find( (item) => {return this.userIn.pass === item.password && this.userIn.user === item.username});
-            /*console.log(testpass)*/
-            if (!testpass) this.passtishi='密码不正确';
-            if (this.usertishi || this.passtishi) return;
-
-            userInfo = JSON.stringify(testpass)//把内容转换成字符串形式
-
-        　  localStorage.setItem('userInfo', userInfo);
-            window.location.href='../登录/登录成功.html';
-            
-            }
+        login : function() {
+            var url= "http://1.15.141.65:8080/login";
+            var data = {
+                name: document.getElementById("user").value,
+                password: document.getElementById("pw").value
+            };
+            PostHandle(url,data,function(data){
+                alert(data.code);
+                if(data.code == 0){
+                    localStorage.setItem("uid",data.uid);
+                    localStorage.setItem("forums",data.uid);
+                var identity;
+                if(data.role == 1){
+            $("#manage").css("display","none");
+            identity = "用户";
+        } else if(data.role == 2){
+            identity = "分主席";
+        } else if(data.role == 3){
+            identity = "秘书";
+        } else if(data.role == 4){
+            identity = "主席";
+        }
+        localStorage.setItem("uid",data.user.uid);
+        localStorage.setItem("role",data.user.role);
+        localStorage.setItem("identity",identity);
+        localStorage.setItem("username",data.user.name);       }
+        window.location.href = "../html/index.html";
+            })
+        }
     }
 })

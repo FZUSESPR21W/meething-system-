@@ -4,6 +4,9 @@ function PostHandle(url,data,callback) {
         url: url,
         data: data,
         dataType: 'json',
+        headers: {
+            "Content-Type": "application/json"
+        },
         success: function (data){
             callback(data);
         },
