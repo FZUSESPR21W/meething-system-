@@ -1,0 +1,99 @@
+/**
+ 
+ Name: 第一次团队作业_论坛页排版_2
+ Author: 李子李子李
+ 
+ **/
+
+.layui-inline, img {
+  display: inline-block;
+  vertical-align: middle
+}
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400
+}
+.layui-edge, .layui-header, .layui-inline, .layui-main {
+  position: relative
+}
+
+blockquote, body, button, dd, div, dl, dt, form, h1, h2, h3, h4, h5, h6, input, li, ol, p, pre, td, textarea, th, ul {
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+}
+a:active, a:hover {
+  outline: 0
+}
+img {
+  border: none
+}
+
+li {
+  list-style: none
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0
+}
+
+a {
+  color: #333;
+  text-decoration: none
+}
+
+a:hover {
+  color: #777
+}
+
+a cite {
+  font-style: normal;
+  *cursor: pointer
+}
+
+.layui-container {
+  position: relative;
+  margin: 0 auto;
+  padding: 0 15px;
+  box-sizing: border-box
+}
+
+@media screen and (min-width:1200px) {
+  .layui-container {
+    width: 1170px
+  }
+	
+  .layui-hide-lg {
+    display: none !important
+  }
+	
+  .layui-show-lg-block {
+    display: block !important
+  }
+	
+  .layui-show-lg-inline {
+    display: inline !important
+  }
+	
+  .layui-show-lg-inline-block {
+    display: inline-block !important
+  }
+	
+	
+.layui-btn {
+  display: inline-block;
+  height: 38px;
+  line-height: 38px;
+  padding: 0 18px;
+  background-color: #009688;
+  color: #fff;
+  white-space: nowrap;
+  text-align: center;
+  font-size: 14px;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none
+}

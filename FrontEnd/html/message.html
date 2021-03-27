@@ -1,32 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="../js/vue.js"></script>    
-    <script src="../js/message.js"></script>   
-    <link rel="stylesheet" href="../css/message.css"/>  
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../js/vue.js"></script>
+    <script src="../js/message.js"></script>
+    <link rel="stylesheet" href="../css/message.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous"
+    />
     <title>message</title>
-</head>
-<body>
+  </head>
+  <body>
     <div id="messageForm">
-        <h2 align ="center">发布消息</h2>
-        <div class="inner">
-            <form action="/login" method="POST">
-                <input type="text" id="title" placeholder="请输入题目"><br>
-                <textarea id = "content" cols="40" rows="10" placeholder="请输入内容"></textarea>
-                <br/>
-                <center>
-                    <input type="checkbox" class="forum" name="forums"><label>一论坛</label>
-                    <input type="checkbox" class="forum"name="forums"><label>二论坛</label>
-                    <input type="checkbox" class="forum"name="forums"><label>三论坛</label>
-                </center>
-                <br/><br/>
-                <button id="btn-publish"type="submit">发布</button>
-                <button id="btn-cancel">取消</button>
-            </form>
-        </div>
+      <h2 align="center">发布消息</h2>
+      <div class="inner">
+        <form action="/login" method="POST">
+          <input
+            class="form-control"
+            type="text"
+            id="title"
+            placeholder="请输入题目"
+          />
+          <br />
+          <br />
+          <textarea
+            id="content"
+            cols="40"
+            rows="10"
+            placeholder="请输入内容"
+          ></textarea>
+          <br />
+          <center>
+            <input type="checkbox" class="forum" name="forums" /><label
+              >一论坛</label
+            >
+            <input type="checkbox" class="forum" name="forums" /><label
+              >二论坛</label
+            >
+            <input type="checkbox" class="forum" name="forums" /><label
+              >三论坛</label
+            >
+          </center>
+          <br /><br />
+          <button id="btn-publish" type="submit">发布</button>
+          <button id="btn-cancel">取消</button>
+        </form>
+      </div>
     </div>
-   
-</body>
+  </body>
 </html>
