@@ -7,11 +7,10 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class User_Forum {
+public class Userforum {
 
   private long ufid;
   private long fid;
   private long uid;
-
 
 }

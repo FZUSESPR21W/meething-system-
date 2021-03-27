@@ -20,7 +20,11 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         return user.getUid();
     }
 
+    @Override
     public int register(User user) {
+        if(this.getOne((Wrappers.<User>lambdaQuery().eq(User::getName, user.getName())))!=null)
+            return 1;
+        this.save(user);
         return 0;
     }
 }

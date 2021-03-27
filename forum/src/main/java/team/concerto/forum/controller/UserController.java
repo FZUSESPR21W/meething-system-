@@ -35,6 +35,15 @@ public class UserController {
         return modelMap;
     }
 
+    @PostMapping("/register")
+    public Map<String,Object> register(@RequestBody User user){
+        Map<String,Object> modelMap = new HashMap<>();
+        int res = userService.register(user);
+
+        modelMap.put("code",res);
+        return  modelMap;
+    }
+
     @GetMapping("/test")
     public Object test(){
         return userService.list();
