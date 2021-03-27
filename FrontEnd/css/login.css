@@ -21,8 +21,31 @@
         background: rgba(50,50,50,.6);
         border-radius: 10px;
     }
-	.title{line-height: 50px;color: white;border-bottom: 1px solid silver;}
-	.inner{margin-top: 80px;}
-	input{width: 170px;height: 34px;border-radius: 5px;color:black;}
-	span{font-size: 12px;color:silver;margin-left: -80px;}
-	button{width: 170px;height: 36px;border-radius: 5px;background:#5B8020;border: 1px solid  silver;color: white;font-size: 18px;margin-top: -10px;cursor: pointer;}
+	.title{
+        line-height: 50px;
+        color: white;
+        border-bottom: 1px solid silver;
+    }
+	.inner{
+        margin-top: 80px;
+    }
+	input{
+        width: 170px;height: 34px;
+        border-radius: 5px;color:black;
+    }
+	span{
+        font-size: 12px;
+        color:silver;
+        margin-left: -80px;
+    }
+	button{
+        width: 170px;
+        height: 36px;
+        border-radius: 5px;
+        background:#5B8020;
+        border: 1px solid  silver;
+        color: white;
+        font-size: 18px;
+        margin-top: -10px;
+        cursor: pointer;
+    }
