@@ -9,6 +9,7 @@ import team.concerto.forum.service.MessageService;
 import team.concerto.forum.service.impl.MessageServiceimpl;
 
 import javax.annotation.Resource;
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 @RestController
@@ -38,6 +39,9 @@ public class MessageController {
     @PostMapping("/addMessage")
     public boolean addMessage(@RequestBody Message message) {
         System.out.println(message.toString());
+        SimpleDateFormat tempDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String datetime = tempDate.format(new java.util.Date());
+        message.setTime(datetime);
         return messageService.save(message);
     }
 
