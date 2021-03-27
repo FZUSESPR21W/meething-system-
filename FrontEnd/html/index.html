@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+<body>
+    <div class="container-fluid" id="app">
+        <div class="row">
+            <nav class="navbar navbar-default" role="navigation">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="">relateTitle</a>
+                        <!--用户界面/分论坛1/分论坛2/分论坛3/-->
+                    </div>
+                    <div>
+                        <ul class="nav navbar-nav">
+                            <li class="active">
+                                <a href="/index">主页</a>
+                            </li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li id="welcome">
+                                <a href="javascript:void(0);">欢迎您，<span id="login-name">XXX</span>（<span id="identity">用户</span>）</a>
+                            </li>
+                            <li id="login">
+                                <a href="/">&nbsp;管理</a>
+                            </li>
+                            <li id="register">
+                                <a href="/message">&nbsp;消息</a>
+                            </li>
+                            <li id="exit">
+                                <a href="/login">&nbsp;退出</a>
+                            </li>
+                            <li class="divider-vertical">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class="row" v-for="forum in forums">
+            <div class="markContent">
+                <div class="title">
+                    <h2>{{ forum.name }}</h2>
+                </div>
+                <div class="leader">
+                    <h4>主席：{{ forum.leader }}</h4>
+                </div>
+                <div class="meeting">
+                    <ul v-for="(value,key,index) in forum.message">
+                        <li>{{ key }} - {{ value }}</li>
+                    </ul>
+                </div>
+            <div class="dash"></div>
+        </div>
+    </div>
+    <script src="../js/vue.js"></script>
+    <script src="../js/index.js"></script>
+</body>
+</html>
