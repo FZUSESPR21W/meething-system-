@@ -30,18 +30,19 @@ public class UserController {
 
 
     @PostMapping("/login")
-    public Map<String,Object> login(@RequestBody User user) {
-        long res = userService.login(user);
-        Map<String,Object> modelMap = new HashMap<>();
-        if(res==-1){
-            modelMap.put("code",1);
-        }else  if(res == -2){
-            modelMap.put("code",2);
-        }else{
-            modelMap.put("code",0);
-            modelMap.put("id",res);
+    public JSONObject login(@RequestBody User user) {
+        JSONObject jo = new JSONObject();
+        User qUser = userService.getOne(Wrappers.<User>lambdaQuery().eq(User::getName, user.getName()));
+
+        if (qUser == null)
+            jo.put("code",1);
+        else if (!user.getPassword().equals(qUser.getPassword()))
+            jo.put("code",2);
+        else {
+            jo.put("code", 0);
+            jo.put("user", qUser);
         }
-        return modelMap;
+        return jo;
     }
 
     @PostMapping("/register")
