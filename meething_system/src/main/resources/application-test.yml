@@ -1,0 +1,43 @@
+#端口号配置
+server:
+  port: 8888
+#  servlet:
+#    # 应用的访问路径
+#    context-path: /
+#    tomcat:
+#      # 存放Tomcat的日志目录
+#      basedir: C:/tomcat
+#      accesslog:
+#        # 开启日志记录
+#        enabled: true
+#        # 访问日志存放目录
+#        directory: logs
+#      # tomcat的URI编码
+#      uri-encoding: UTF-8
+
+spring:
+  #jdbc配置   （ localhost : 3306 ）
+  datasource:
+    url: jdbc:mysql://1.15.141.65:3306/group1?useUnicode=true&characterEncoding=UTF-8&useSSL=true&serverTimezone=Etc/GMT-8
+      username: root
+      password: Root123.
+      driver-class-name: com.mysql.cj.jdbc.Driver
+  #静态文件配置
+  web:
+    resources:
+      static-locations: classpath:/static,classpath:/META-INF/resources,classpath:/templates/
+
+#mybatis配置
+mybatis:
+  #映射文件路径
+  mapper-locations: classpath:mapper/*.xml
+  #模型所在的包名
+  type-aliases-package: fzu.concerto.meething_system.pojo
+  #属性映射  userName <==> user_name
+  configuration:
+    mapUnderscoreToCamelCase: true
+
+#showSql
+logging:
+  level:
+    com.practice.pairproject: debug
