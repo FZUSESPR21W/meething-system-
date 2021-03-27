@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class User {
 
-  //@TableId(type = IdType.AUTO)
+  @TableId(type = IdType.AUTO)
   private long uid;
   private String name;
   private String password;

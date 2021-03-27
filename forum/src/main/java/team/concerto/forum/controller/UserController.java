@@ -1,5 +1,7 @@
 package team.concerto.forum.controller;
 
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,18 +30,19 @@ public class UserController {
 
 
     @PostMapping("/login")
-    public Map<String,Object> login(@RequestBody User user) {
-        long res = userService.login(user);
-        Map<String,Object> modelMap = new HashMap<>();
-        if(res==-1){
-            modelMap.put("code",1);
-        }else  if(res == -2){
-            modelMap.put("code",2);
-        }else{
-            modelMap.put("code",0);
-            modelMap.put("id",res);
+    public JSONObject login(@RequestBody User user) {
+        JSONObject jo = new JSONObject();
+        User qUser = userService.getOne(Wrappers.<User>lambdaQuery().eq(User::getName, user.getName()));
+
+        if (qUser == null)
+            jo.put("code",1);
+        else if (!user.getPassword().equals(qUser.getPassword()))
+            jo.put("code",2);
+        else {
+            jo.put("code", 0);
+            jo.put("user", qUser);
         }
-        return modelMap;
+        return jo;
     }
 
     @PostMapping("/register")
@@ -58,9 +61,22 @@ public class UserController {
         return modelMap;
     }
 
-    @GetMapping("/test")
-    public Object test(){
+    @GetMapping("/allUsers")
+    public Object getAllUsers(){
         return userService.list();
+    }
+
+    @PostMapping("/joinForum")
+    public void joinForum(@RequestBody JSONObject jsonParam){
+        long uid = jsonParam.getLong("uid");
+        JSONArray ja = jsonParam.getJSONArray("fid");
+        for(int i =0;i<ja.size();i++){
+            Userforum uf = new Userforum();
+            uf.setUid(uid);
+            uf.setFid(ja.getLong(i));
+            userforumService.save(uf);
+        }
+
     }
 
 }

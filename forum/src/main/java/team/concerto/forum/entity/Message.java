@@ -16,6 +16,6 @@ public class Message {
   private long fid;
   private String title;
   private String content;
-  private java.sql.Timestamp time;
+  private String time;
 
 }
