@@ -1,26 +1,28 @@
 $(function () {
     var name = localStorage.getItem("username");
-        $("#login-name").text(name);
-        var identity =     localStorage.getItem("identity");
-        $("#identity").text(identity);
-        var role = localStorage.getItem("role");
-        if(role==1){
-            $("#manage").css("display","none");
-        }
-        var data = localStorage.getItem("uid");
-    PostHandle("http://1.15.141.65:8080/myforum", data, function(data){
+    $("#login-name").text(name);
+    var identity = localStorage.getItem("identity");
+    $("#identity").text(identity);
+    var role = localStorage.getItem("role");
+    if(role==1){
+        $("#manage").css("display","none");
+    }//判断登录身份
+    var data = {
+        uid:localStorage.getItem("uid")
+    };
+    PostHandle("http://1.15.141.65:8080/myforum", JSON.stringify(data), function(data){
         var forums = data.forums;
         JSON.stringify(forums);
         localStorage.setItem("forums",forums);
-    });//判断登录身份
+    });
 })
 
 var app = new Vue({
     el: '#app',
     data: 
     {
-        forums: JSON.parse(localStorage.getItem("forums")),
-        /*[
+        forums: //JSON.parse(localStorage.getItem("forums")),
+        [
             {
                 name:"分论坛1",
                 leader:"分论坛主席1",
@@ -57,7 +59,7 @@ var app = new Vue({
                     "13:00":"event6",
                 }
             }
-        ]*/
+        ]
     },
     methods: {
         manage:function(){
